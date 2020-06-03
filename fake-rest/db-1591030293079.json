@@ -1,0 +1,25 @@
+{
+  "Posts": [
+    {
+      "title": "Zee News",
+      "description": "News Channel",
+      "id": "1",
+      "active": true
+    },
+    {
+      "title": "Cartoon Network",
+      "description": "Enternaintment Channel for kids",
+      "id": "2",
+      "active": true
+    },
+    {
+      "title": "Facebook",
+      "description": "Social Media",
+      "id": "iMsRql6",
+      "active": true
+    },
+    {
+      "id": "1oGk3Gn"
+    }
+  ]
+}

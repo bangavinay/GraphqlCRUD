@@ -1,0 +1,28 @@
+{
+  "Posts": [
+    {
+      "title": "Facebook",
+      "description": "Social Media",
+      "active": true,
+      "id": "iMsRql6"
+    },
+    {
+      "title": "Byju Test Learnig",
+      "description": "Learning Application",
+      "active": false,
+      "id": "dR4HqNR"
+    },
+    {
+      "title": "dfsdf",
+      "description": "fsdfs",
+      "active": false,
+      "id": "d1PNnD3"
+    },
+    {
+      "title": "Aaj Tak",
+      "description": "News channel",
+      "active": true,
+      "id": "bSHQsYx"
+    }
+  ]
+}
