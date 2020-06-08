@@ -14,12 +14,10 @@ function App() {
     <ApolloProvider client={apolloClient}>
       <Router>
       <div className="App">
-       <Header />
-        <div>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/list" component={List} />
-          <Route exact path="/edit/:id" component={Edit} />
-        </div>
+        <Header />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/list" component={List} />
+        <Route exact path="/edit/:id" component={Edit} />
       </div>
       </Router>
     </ApolloProvider>

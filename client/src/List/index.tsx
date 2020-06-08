@@ -6,8 +6,9 @@ import { GET_POSTS_QUERY, DELETE_POSTS_MUTATION } from '../Queries';
 const List = () => {
     const { loading, error, data,refetch } = GET_POSTS_QUERY();
     const [deletePost] = DELETE_POSTS_MUTATION();
-    refetch();
     const history = useHistory();
+    // refetch();
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     let editPost = (id) =>{
