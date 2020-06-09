@@ -7,8 +7,6 @@ const List = () => {
     const { loading, error, data,refetch } = GET_POSTS_QUERY();
     const [deletePost] = DELETE_POSTS_MUTATION();
     const history = useHistory();
-    // refetch();
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     let editPost = (id) =>{

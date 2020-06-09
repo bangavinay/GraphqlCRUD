@@ -54,5 +54,13 @@ const UPDATE_POST = gql`
 export const GET_POSTS_QUERY = () => useQuery(GET_POSTS);
 export const GET_POST_QUERY = (id) => useQuery(GET_POST,{ variables: { id}});
 export const DELETE_POSTS_MUTATION = () => useMutation(DELETE_POSTS);
-export const CREATE_POST_MUTATION = () => useMutation(CREATE_POST);
+export const CREATE_POST_MUTATION = () => useMutation(CREATE_POST,{
+  update(cache,{data:{createPost}}){
+    const cacheData:any= cache.readQuery({query:GET_POSTS});
+    cache.writeQuery({
+      query: GET_POSTS,
+      data:{posts: cacheData.posts.concat( createPost )}
+    })
+  }
+});
 export const UPDATE_POST_MUTATION = () => useMutation(UPDATE_POST);
