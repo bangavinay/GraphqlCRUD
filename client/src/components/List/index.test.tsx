@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, wait } from '@testing-library/react';
 import { MockedProvider } from '@apollo/react-testing';
-import List from '../List';
+import List from '.';
 
-import { GET_POSTS } from '../Queries';
+import { GET_POSTS } from '../../queries';
 
 
 describe('Render Edit', () => {
@@ -40,10 +40,6 @@ describe('Render Edit', () => {
             </MockedProvider>);
 
         await wait();
-        // const tree = component.toJSON();
-        // console.log(tree,"sdfsdfsdfdsfdsfsdf");
-
-        // expect(tree.children).toContain('Buck');
         expect(component).toMatchSnapshot()
     });
 });

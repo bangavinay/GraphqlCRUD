@@ -26,7 +26,6 @@ export default {
     Mutation:{
         createPost(_:any,{title, description,active}:Post){
             let payload:Post = {title:title, description:description,active:active};
-            console.log(payload);
             return fetch(`${baseURL}/posts`, {
                 method: 'POST',
                 headers: {
@@ -38,7 +37,6 @@ export default {
                 
         },
         deletePost(_:any,{id}:any){
-            console.log(id,"Testing");
             const res=  fetch(`${baseURL}/posts/${id}`, {
                 method: 'DELETE',
                 headers: {

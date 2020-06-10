@@ -23,13 +23,13 @@ export const GET_POST = gql`
   }
 `;
 
-const DELETE_POSTS = gql`
+export const DELETE_POSTS = gql`
   mutation DeletePost($id: ID!) {
     deletePost(id: $id)
   }
 `;
 
-const CREATE_POST = gql`
+export const CREATE_POST = gql`
   mutation CreatePost($title: String!,$description: String!, $active: Boolean!) {
     createPost(title: $title,description: $description, active: $active ) {
       id
@@ -40,7 +40,7 @@ const CREATE_POST = gql`
   }
 `;
 
-const UPDATE_POST = gql`
+export const UPDATE_POST = gql`
   mutation UpdatePost($id: ID!, $title: String!,$description: String!, $active: Boolean!) {
     updatePost(id:$id, title: $title,description: $description, active: $active ) {
       id

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, wait, getByText } from '@testing-library/react';
 import { MockedProvider } from '@apollo/react-testing';
-import Edit from '../Edit';
-import { GET_POST } from '../Queries';
+import Edit from '.';
+import { GET_POST } from '../../queries';
 
 describe('Render Edit', () => {
     const postMock = {

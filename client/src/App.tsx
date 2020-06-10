@@ -3,18 +3,21 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 import { ApolloProvider } from '@apollo/react-hooks';
 import apolloClient from './apolloSetup';
-import Header from './Header';
-import Home from './Home';
-import List from './List';
-import Edit from './Edit';
+import { Header, Home, List, Edit } from './components';
+import {IHeader} from './types/IHeader';
 
+const headerProps :IHeader = {
+  headerText : 'Welcome to Post App',
+  addPostText : 'Add Post',
+  listPostText : 'List Post'
+}
 
 function App() {
   return (
     <ApolloProvider client={apolloClient}>
       <Router>
       <div className="App">
-        <Header />
+        <Header {...headerProps}/>
         <Route exact path="/" component={Home} />
         <Route exact path="/list" component={List} />
         <Route exact path="/edit/:id" component={Edit} />

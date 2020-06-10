@@ -1,17 +1,29 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { CREATE_POST_MUTATION } from '../Queries';
+import { CREATE_POST_MUTATION } from '../../queries';
 
 
 
 const Home = () => {
     const history = useHistory();
-    const [createPost] = CREATE_POST_MUTATION();
+    const [ createPost ] = CREATE_POST_MUTATION();
 
-    let titleInput, descriptionInput, activeVal;
-    let submitform = (e)=>{
+    let titleInput:HTMLInputElement, 
+      descriptionInput:HTMLInputElement, 
+      activeVal:HTMLInputElement;
+
+    /**
+     * Function used to call post mutation for creating a new post
+     * @param {e} Event
+     */
+
+    let createPostSubmit = (e: any)=>{
       e.preventDefault();
-      createPost({ variables: { title: titleInput.value, description: descriptionInput.value, active: activeVal.checked } }).then(({data}:any)=>{
+      //to do validations
+      createPost({ variables: { 
+        title: titleInput.value, 
+        description: descriptionInput.value, 
+        active: activeVal.checked } }).then(({data}:any)=>{
         if(data.createPost.id){
           history.push('/list');
         }
@@ -19,7 +31,7 @@ const Home = () => {
     }
   return(
     <div className ='form'>
-      <form onSubmit={submitform}>
+      <form onSubmit={createPostSubmit}>
         <p>
           <label> Title:
             <input type="text" ref={node => {

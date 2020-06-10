@@ -1,15 +1,19 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { GET_POSTS_QUERY, DELETE_POSTS_MUTATION } from '../Queries';
+import { GET_POSTS_QUERY, DELETE_POSTS_MUTATION } from '../../queries';
 
 
 const List = () => {
-    const { loading, error, data,refetch } = GET_POSTS_QUERY();
-    const [deletePost] = DELETE_POSTS_MUTATION();
+    const [ deletePost ] = DELETE_POSTS_MUTATION();
     const history = useHistory();
+
+    //Fetching the list of posts 
+    const { loading, error, data, refetch } = GET_POSTS_QUERY();
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
-    let editPost = (id) =>{
+
+    //Routing to Edit page on click of edit button  
+    const  editPost = (id: number) => {
       history.push(`/edit/${id}`);
     }
     return data.posts.map(({ id, title, description, active }) => {
@@ -19,7 +23,7 @@ const List = () => {
           <h3>{title}</h3> 
           <p>{description}</p>
           <button onClick={()=>editPost(id)}> Edit</button>
-          <button onClick={e => { deletePost({ variables: { id } });refetch();}} >Delete</button>
+          <button onClick={() => { deletePost({ variables: { id } });refetch();}} >Delete</button>
         </div>
       </div>);
       }

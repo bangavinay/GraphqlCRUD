@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MockedProvider } from '@apollo/react-testing';
-import Home from '../Home';
+import Home from '.';
 
 describe('Render Home', () => {
     test('renders form for creating post', () => {
